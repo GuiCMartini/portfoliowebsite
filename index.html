@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Desenvolvedor Full Stack com projetos em JavaScript, Python, React e Node.js. Confira minha experiência e trabalhos recentes.">
+    <meta name="keywords" content="portfólio, desenvolvedor full stack, JavaScript, Python, React, Node.js">
+    <meta name="author" content="Guilherme Caires Martini">
+    <meta property="og:title" content="Meu Portfólio">
+    <meta property="og:image" content="https://seusite.com/assets/imagem-compartilhamento.jpg">
+    <meta property="og:description" content="Portfólio de Desenvolvedor Full Stack com projetos em JavaScript, Python, React e Node.js">
+    <link rel="canonical" href="https://seusite.com/">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/assets/favicon.svg">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/assets/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+  
+    <title>Guilherme Martini</title>
+    <style>
+      /* Se o header fixo tem 70px de altura, adicionamos um espaçamento no main para não ficar oculto */
+      main {
+        margin-top: 70px;
+      }
+    </style>
+  </head>
+<body>
+  <!-- Cabeçalho (Navbar Fixa) -->
+  <header class="navbar">
+    <h1>Meu Portfólio</h1>
+    <nav class="nav-links">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#curriculo">Currículo</a> <!-- Novo Link -->
+
+    </nav>
+    <button class="theme-toggle" aria-label="Alternar tema claro/escuro" onclick="toggleTheme()">
+      <span class="theme-icon">🌓</span>
+      <span class="sr-only">Alternar tema</span>
+    </button>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <!-- Seção Hero -->
+    <section id="inicio">
+      <div class="hero-container">
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+        <!-- Imagem de Fundo -->
+        <img 
+          src="assets/assets/fundo.png" 
+          alt="Desenvolvedor trabalhando em um projeto" 
+          class="hero-background"
+          loading="lazy"
+        >
+        <!-- Texto Hero -->
+        <div class="hero-text">
+          <h2 class="fade-in">Desenvolvedor Full Stack</h2>
+          <p class="fade-in">Desenvolvedor buscando oportunidades no mercado de trabalho</p>
+          <a href="#sobre" class="cta-button">Saiba Mais</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre">
+      <div class="about-container">
+        <div class="profile-photo-container">
+          <img src="assets/assets/IMG_2314.JPG" 
+               alt="Foto do desenvolvedor" 
+               class="profile-photo" 
+               loading="lazy"
+               width="400" 
+               height="400">
+          <div class="photo-border"></div>
+        </div>
+        <div class="about-text">
+          <h2>Sobre Mim</h2>
+          <p>
+            Olá! Meu nome é <strong>Guilherme Caires Martini</strong>, sou estudante de Ciência da Computação na <strong>Universidade Cidade de São Paulo (UNICID)</strong>, no período noturno. Estou empenhado em construir uma carreira sólida como desenvolvedor Full Stack, com foco em tecnologias modernas como JavaScript, Python, React e Node.js.
+          </p>
+          <p>
+            Atualmente, estou buscando oportunidades de <strong>estágio</strong> ou vagas como <strong>desenvolvedor júnior</strong> para aplicar meus conhecimentos e crescer profissionalmente. Minha paixão por resolver problemas e criar soluções digitais inovadoras me motiva a aprender continuamente e enfrentar novos desafios.
+          </p>
+          <p>
+            Acredito que a tecnologia tem o poder de transformar ideias em realidade e impactar positivamente a vida das pessoas. Por isso, dedico-me diariamente a aprimorar minhas habilidades técnicas e colaborar em projetos que agreguem valor.
+          </p>
+          <div class="cta-and-icons">
+            <a href="#contato" class="cta-button">Entre em Contato</a>
+            <div class="social-icons">
+              <a href="https://github.com/GuiCMartini" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/guilherme-martini-8020521a3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:seuemail@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h3>Habilidades</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span>JavaScript</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Python</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>React</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Node.js</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos -->
+<!-- Seção de Projetos - Catálogo -->
+<!-- Seção de Projetos - Catálogo -->
+<section id="projects">
+  <h2>Projetos</h2>
+  <div class="projects-catalog">
+    <!-- Projeto 1 -->
+    <div class="project-card">
+      <img src="assets/projeto1.jpg" alt="Projeto 1">
+      <div class="project-info">
+        <h3>Projeto 1</h3>
+        <p>Descrição breve do projeto 1.</p>
+        <a href="#" class="project-link">Saiba Mais</a>
+      </div>
+    </div>
+    <!-- Projeto 2 -->
+    <div class="project-card">
+      <img src="assets/projeto2.jpg" alt="Projeto 2">
+      <div class="project-info">
+        <h3>Projeto 2</h3>
+        <p>Descrição breve do projeto 2.</p>
+        <a href="#" class="project-link">Saiba Mais</a>
+      </div>
+    </div>
+    <!-- Projeto 3 -->
+    <div class="project-card">
+      <img src="assets/projeto3.jpg" alt="Projeto 3">
+      <div class="project-info">
+        <h3>Projeto 3</h3>
+        <p>Descrição breve do projeto 3.</p>
+        <a href="#" class="project-link">Saiba Mais</a>
+      </div>
+    </div>
+    <!-- Projeto 4 -->
+    <div class="project-card">
+      <img src="assets/projeto4.jpg" alt="Projeto 4">
+      <div class="project-info">
+        <h3>Projeto 4</h3>
+        <p>Descrição breve do projeto 4.</p>
+        <a href="#" class="project-link">Saiba Mais</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção Currículo -->
+<section id="curriculo">
+  <h2>Meu Currículo</h2>
+  <div class="resume-container">
+    <div class="resume-text">
+      <p>
+        Aqui você pode acessar meu currículo detalhado, onde apresento minhas experiências acadêmicas, habilidades técnicas e projetos relevantes. 
+        Estou sempre em busca de novas oportunidades para aplicar meus conhecimentos e crescer profissionalmente.
+      </p>
+      <div class="resume-actions">
+        <a href="assets/assets/curriculo gui.pdf" download class="cta-button">Baixar Currículo</a>
+        <button class="cta-button view-resume">Visualizar Currículo Completo</button>
+      </div>
+    </div>
+    <div class="resume-preview">
+      <embed src="assets/assets/Curriculo-Guilherme22.png" type="application/pdf" width="100%" height="400px">
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Rodapé -->
+<footer>
+  <div class="footer-container">
+    <!-- Informações de Contato -->
+    <div class="footer-section">
+      <h3>Guilherme Caires Martini</h3>
+      <p>Desenvolvedor Full Stack</p>
+      <p>Estudante na Universidade Cidade de São Paulo (UNICID)</p>
+      <p><strong>Email:</strong> <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a></p>
+    </div>
+
+    <!-- Links Rápidos -->
+    <div class="footer-section">
+      <h3>Navegação</h3>
+      <ul class="footer-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre Mim</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+      </ul>
+    </div>
+
+    <!-- Redes Sociais -->
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <div class="social-icons">
+        <a href="https://github.com/GuiCMartini" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/guilherme-martini-8020521a3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:gcairesmartini@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Chamada para Ação -->
+    <div class="footer-section">
+      <h3>Vamos Conversar!</h3>
+      <p>Estou disponível para novas oportunidades e projetos. Entre em contato!</p>
+      <a href="#contato" class="cta-button">Entre em Contato</a>
+  </div>
+
+  <!-- Direitos Autorais -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Guilherme Caires Martini. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+</body>
+</html>
+

@@ -3,6 +3,8 @@
   --bg-color: #ffffff;
   --text-color: #333333;
   --primary-color: #25af5f;
+  --secondary-color: #27ae60;
+  --neutral-color: #f4f4f4;
   --transition: all 0.3s ease;
   --card-bg: rgba(255, 255, 255, 0.9);
 }
@@ -27,7 +29,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif; /* Fonte moderna e legível */
   font-size: 16px;
   background-color: var(--bg-color);
   color: var(--text-color);

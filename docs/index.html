@@ -139,49 +139,64 @@
     </section>
 
     <!-- Seção Projetos -->
-<!-- Seção de Projetos - Catálogo -->
-<!-- Seção de Projetos - Catálogo -->
-<section id="projects">
-  <h2>Projetos</h2>
-  <div class="projects-catalog">
-    <!-- Projeto 1 -->
-    <div class="project-card">
-      <img src="assets/projeto1.jpg" alt="Projeto 1">
-      <div class="project-info">
-        <h3>Projeto 1</h3>
-        <p>Descrição breve do projeto 1.</p>
-        <a href="#" class="project-link">Saiba Mais</a>
+    <section id="projects">
+      <div class="section-header">
+        <h2>Meus Projetos</h2>
+        <p>Aqui estão alguns dos projetos que desenvolvi recentemente.</p>
       </div>
-    </div>
-    <!-- Projeto 2 -->
-    <div class="project-card">
-      <img src="assets/projeto2.jpg" alt="Projeto 2">
-      <div class="project-info">
-        <h3>Projeto 2</h3>
-        <p>Descrição breve do projeto 2.</p>
-        <a href="#" class="project-link">Saiba Mais</a>
+    
+      <!-- Filtros de Categoria -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="fullstack">Fullstack</button>
       </div>
-    </div>
-    <!-- Projeto 3 -->
-    <div class="project-card">
-      <img src="assets/projeto3.jpg" alt="Projeto 3">
-      <div class="project-info">
-        <h3>Projeto 3</h3>
-        <p>Descrição breve do projeto 3.</p>
-        <a href="#" class="project-link">Saiba Mais</a>
+    
+      <!-- Grade de Projetos -->
+      <div class="projects-grid">
+        <!-- Projeto 1 -->
+        <div class="project-card" data-category="frontend">
+          <img src="project1.jpg" alt="Projeto 1" class="project-image">
+          <div class="project-info">
+            <h3>Projeto 1</h3>
+            <p>Descrição breve do projeto 1.</p>
+            <div class="project-actions">
+              <a href="#modal-project1" class="cta-button">Saiba Mais</a>
+              <a href="https://github.com/seuusuario/projeto1" target="_blank" class="cta-button secondary">GitHub</a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Projeto 2 -->
+        <div class="project-card" data-category="backend">
+          <img src="project2.jpg" alt="Projeto 2" class="project-image">
+          <div class="project-info">
+            <h3>Projeto 2</h3>
+            <p>Descrição breve do projeto 2.</p>
+            <div class="project-actions">
+              <a href="#modal-project2" class="cta-button">Saiba Mais</a>
+              <a href="https://demo-projeto2.com" target="_blank" class="cta-button secondary">Demo</a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Repita para outros projetos... -->
       </div>
-    </div>
-    <!-- Projeto 4 -->
-    <div class="project-card">
-      <img src="assets/projeto4.jpg" alt="Projeto 4">
-      <div class="project-info">
-        <h3>Projeto 4</h3>
-        <p>Descrição breve do projeto 4.</p>
-        <a href="#" class="project-link">Saiba Mais</a>
+    
+      <!-- Modais de Detalhes -->
+      <div id="modal-project1" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Projeto 1</h2>
+          <p>Detalhes completos do projeto 1, incluindo tecnologias usadas, objetivos e resultados.</p>
+          <img src="project1-details.jpg" alt="Detalhes do Projeto 1">
+          <a href="https://github.com/seuusuario/projeto1" target="_blank" class="cta-button">Ver no GitHub</a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    
+      <!-- Repita para outros modais... -->
+    </section>
 
 <!-- Seção Currículo -->
 <section id="curriculo">

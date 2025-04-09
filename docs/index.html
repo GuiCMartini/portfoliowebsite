@@ -68,135 +68,225 @@
       </div>
     </section>
 
-    <!-- Seção Sobre Mim -->
-    <section id="sobre">
-      <div class="about-container">
-        <div class="profile-photo-container">
-          <img src="assets/assets/IMG_2314.JPG" 
-               alt="Foto do desenvolvedor" 
-               class="profile-photo" 
-               loading="lazy"
-               width="400" 
-               height="400">
-          <div class="photo-border"></div>
-        </div>
-        <div class="about-text">
-          <h2>Sobre Mim</h2>
-          <p>
-            Olá! Meu nome é <strong>Guilherme Caires Martini</strong>, sou estudante de Ciência da Computação na <strong>Universidade Cidade de São Paulo (UNICID)</strong>, no período noturno. Estou empenhado em construir uma carreira sólida como desenvolvedor Full Stack, com foco em tecnologias modernas como JavaScript, Python, React e Node.js.
-          </p>
-          <p>
-            Atualmente, estou buscando oportunidades de <strong>estágio</strong> ou vagas como <strong>desenvolvedor júnior</strong> para aplicar meus conhecimentos e crescer profissionalmente. Minha paixão por resolver problemas e criar soluções digitais inovadoras me motiva a aprender continuamente e enfrentar novos desafios.
-          </p>
-          <p>
-            Acredito que a tecnologia tem o poder de transformar ideias em realidade e impactar positivamente a vida das pessoas. Por isso, dedico-me diariamente a aprimorar minhas habilidades técnicas e colaborar em projetos que agreguem valor.
-          </p>
-          <div class="cta-and-icons">
-            <a href="#contato" class="cta-button">Entre em Contato</a>
-            <div class="social-icons">
-              <a href="https://github.com/GuiCMartini" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/guilherme-martini-8020521a3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="mailto:seuemail@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail">
-                <i class="fas fa-envelope"></i>
-              </a>
-            </div>
-          </div>
+   <!-- Seção Sobre Mim -->
+<section id="sobre">
+  <div class="about-container">
+    <div class="profile-photo-container">
+      <img src="assets/assets/IMG_2314.JPG" 
+           alt="Foto do desenvolvedor" 
+           class="profile-photo" 
+           loading="lazy"
+           width="400" 
+           height="400">
+      <div class="photo-border"></div>
+    </div>
+    <div class="about-text">
+      <h2>Sobre Mim</h2>
+      <p>
+        Olá! Meu nome é <strong>Guilherme Caires Martini</strong>, sou estudante do 4º semestre de <strong>Análise e Desenvolvimento de Sistemas</strong> na <strong>Universidade Cidade de São Paulo (UNICID)</strong>, no período noturno. Estou empenhado em construir uma carreira sólida como desenvolvedor Full Stack, com foco em tecnologias modernas como JavaScript, TypeScript, Python, React, Node.js, Go e PostgreSQL.
+      </p>
+      <p>
+        Atualmente, estou buscando oportunidades de <strong>estágio</strong> ou vagas como <strong>desenvolvedor júnior</strong> para aplicar meus conhecimentos e crescer profissionalmente. Minha paixão por resolver problemas e criar soluções digitais inovadoras me motiva a aprender continuamente e enfrentar novos desafios.
+      </p>
+      <p>
+        Acredito que a tecnologia tem o poder de transformar ideias em realidade e impactar positivamente a vida das pessoas. Por isso, dedico-me diariamente a aprimorar minhas habilidades técnicas e colaborar em projetos que agreguem valor.
+      </p>
+      <div class="cta-and-icons">
+        <a href="#contato" class="cta-button">Entre em Contato</a>
+        <div class="social-icons">
+          <a href="https://github.com/GuiCMartini" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/guilherme-martini-8020521a3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:seuemail@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </div>
-      <div class="skills-section">
-        <h3>Habilidades</h3>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <span>JavaScript</span>
-            <div class="progress-bar">
-              <div class="progress" style="width: 90%;"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Python</span>
-            <div class="progress-bar">
-              <div class="progress" style="width: 85%;"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>React</span>
-            <div class="progress-bar">
-              <div class="progress" style="width: 80%;"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Node.js</span>
-            <div class="progress-bar">
-              <div class="progress" style="width: 75%;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Seção Projetos -->
-    <section id="projects">
-      <div class="section-header">
-        <h2>Meus Projetos</h2>
-        <p>Aqui estão alguns dos projetos que desenvolvi recentemente.</p>
-      </div>
-    
-      <!-- Filtros de Categoria -->
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="frontend">Frontend</button>
-        <button class="filter-btn" data-filter="backend">Backend</button>
-        <button class="filter-btn" data-filter="fullstack">Fullstack</button>
-      </div>
-    
-      <!-- Grade de Projetos -->
-      <div class="projects-grid">
-        <!-- Projeto 1 -->
-        <div class="project-card" data-category="frontend">
-          <img src="project1.jpg" alt="Projeto 1" class="project-image">
-          <div class="project-info">
-            <h3>Projeto 1</h3>
-            <p>Descrição breve do projeto 1.</p>
-            <div class="project-actions">
-              <a href="#modal-project1" class="cta-button">Saiba Mais</a>
-              <a href="https://github.com/seuusuario/projeto1" target="_blank" class="cta-button secondary">GitHub</a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Projeto 2 -->
-        <div class="project-card" data-category="backend">
-          <img src="project2.jpg" alt="Projeto 2" class="project-image">
-          <div class="project-info">
-            <h3>Projeto 2</h3>
-            <p>Descrição breve do projeto 2.</p>
-            <div class="project-actions">
-              <a href="#modal-project2" class="cta-button">Saiba Mais</a>
-              <a href="https://demo-projeto2.com" target="_blank" class="cta-button secondary">Demo</a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Repita para outros projetos... -->
-      </div>
-    
-      <!-- Modais de Detalhes -->
-      <div id="modal-project1" class="modal">
-        <div class="modal-content">
-          <span class="close-modal">&times;</span>
-          <h2>Projeto 1</h2>
-          <p>Detalhes completos do projeto 1, incluindo tecnologias usadas, objetivos e resultados.</p>
-          <img src="project1-details.jpg" alt="Detalhes do Projeto 1">
-          <a href="https://github.com/seuusuario/projeto1" target="_blank" class="cta-button">Ver no GitHub</a>
+  <div class="skills-section">
+    <h3>Habilidades</h3>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <span>HTML</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
         </div>
       </div>
-    
-      <!-- Repita para outros modais... -->
-    </section>
+      <div class="skill-item">
+        <span>CSS</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>JavaScript</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>React.js</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>Python</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>Go</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>AWS</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 60%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- Seção Projetos -->
+<section id="projects">
+  <div class="section-header">
+    <h2>Meus Projetos</h2>
+    <p>Aqui estão alguns dos projetos que desenvolvi recentemente.</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="frontend">Frontend</button>
+    <button class="filter-btn" data-filter="backend">Backend</button>
+    <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+  </div>
+
+  <div class="projects-grid">
+    <!-- Projeto: GuiLoja -->
+    <div class="project-card" data-category="fullstack">
+      <img src="assets/assets/gui-loja.png" alt="GuiLoja" class="project-image">
+      <div class="project-info">
+        <h3>GuiLoja</h3>
+        <small>Updated 2 hours ago</small>
+        <p>Aplicação web para cadastro e exibição de produtos usando Go e PostgreSQL.</p>
+        <a href="https://github.com/GuiCMartini/GuiLoja" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: pizzariago -->
+    <div class="project-card" data-category="backend">
+      <img src="assets/assets/pizzago.png" alt="PizzariaGo" class="project-image">
+      <div class="project-info">
+        <h3>pizzariago</h3>
+        <small>Updated last week</small>
+        <p>API REST em Go com o framework Gin para gerenciamento de pizzaria, com cadastro e consulta de pizzas.</p>
+        <a href="https://github.com/GuiCMartini/pizzariago" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: Jogo -->
+    <div class="project-card" data-category="frontend">
+      <img src="assets/assets/jogogui.png" alt="Jogo" class="project-image">
+      <div class="project-info">
+        <h3>Jogo</h3>
+        <small>Updated last month</small>
+        <p>Jogo simples desenvolvido com JavaScript puro.</p>
+        <a href="https://github.com/GuiCMartini/Jogo" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: meustreinos -->
+    <div class="project-card" data-category="frontend">
+      <img src="assets/assets/treino.png" alt="Meus Treinos" class="project-image">
+      <div class="project-info">
+        <h3>meustreinos</h3>
+        <small>Updated on Mar 7</small>
+        <p>Aplicação em JavaScript para acompanhar treinos e atividades físicas.</p>
+        <a href="https://github.com/GuiCMartini/meustreinos" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: gerador-de-senhas -->
+    <div class="project-card" data-category="backend">
+      <img src="img/gerador-senhas.jpg" alt="Gerador de Senhas" class="project-image">
+      <div class="project-info">
+        <h3>gerador-de-senhas</h3>
+        <small>Updated on Feb 28</small>
+        <p>Gerador de senhas aleatórias desenvolvido em Python puro.</p>
+        <a href="https://github.com/GuiCMartini/gerador-de-senhas" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: portfoliowebsite -->
+    <div class="project-card" data-category="frontend">
+      <img src="img/portfoliowebsite.jpg" alt="Portfolio Website" class="project-image">
+      <div class="project-info">
+        <h3>portfoliowebsite</h3>
+        <small>Updated on Feb 12</small>
+        <p>Portfólio pessoal com foco em exibir habilidades, projetos e experiências como desenvolvedor.</p>
+        <a href="https://github.com/GuiCMartini/portfoliowebsite" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: listandotarefas -->
+    <div class="project-card" data-category="frontend">
+      <img src="img/listandotarefas.jpg" alt="Listando Tarefas" class="project-image">
+      <div class="project-info">
+        <h3>listandotarefas</h3>
+        <small>Updated on Feb 11</small>
+        <p>To-do list desenvolvida com JavaScript.</p>
+        <a href="https://github.com/GuiCMartini/listandotarefas" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: calculadora -->
+    <div class="project-card" data-category="frontend">
+      <img src="img/calculadora.jpg" alt="Calculadora" class="project-image">
+      <div class="project-info">
+        <h3>calculadora</h3>
+        <small>Updated on Feb 5</small>
+        <p>Calculadora simples feita com HTML e JavaScript.</p>
+        <a href="https://github.com/GuiCMartini/calculadora" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Projeto: portfolio -->
+    <div class="project-card" data-category="frontend">
+      <img src="img/portfolio.jpg" alt="Primeiro Portfólio" class="project-image">
+      <div class="project-info">
+        <h3>portfolio</h3>
+        <small>Updated on Feb 4</small>
+        <p>Primeiro portfólio criado com HTML e CSS nos cursos da Alura.</p>
+        <a href="https://github.com/GuiCMartini/portfolio" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+
+
+
+    <!-- Projeto: aluraplus -->
+    <div class="project-card" data-category="frontend">
+      <img src="img/aluraplus.jpg" alt="Alura Plus" class="project-image">
+      <div class="project-info">
+        <h3>aluraplus</h3>
+        <small>Updated on [date]</small>
+        <p>Projeto da Alura para praticar conceitos de HTML e CSS.</p>
+        <a href="https://github.com/GuiCMartini/aluraplus" target="_blank" class="cta-button secondary">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Seção Currículo -->
 <section id="curriculo">

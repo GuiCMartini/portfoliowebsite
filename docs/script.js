@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   // Controle da Navbar no Scroll
   const navbar = document.querySelector('.navbar');
@@ -36,20 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Scroll Suave Aprimorado
   const navLinks = document.querySelectorAll('.nav-links a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-        const targetPosition = targetSection.offsetTop - navHeight;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
 
   // Formulário de Contato (Formspree)
   const contactForm = document.querySelector('.contact-form');
@@ -87,32 +74,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 400);
   });
 
-  // Matrix Background
+  // Matrix Background (OTIMIZADO)
   function createMatrix() {
     const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
     canvas.classList.add('matrix-bg');
     document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
-    const chars = '01';
-    const drops = Array(Math.floor(width / 10)).fill(0);
+
+    const fontSize = 14;
+    const columns = Math.floor(width / fontSize);
+    const drops = Array(columns).fill(1);
+    const chars = 'アァイィウエエカキクケコサシスセソタチツテトナニヌネノ01'.split('');
+
     function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, width, height);
-      ctx.fillStyle = '#0F0';
-      ctx.font = '15px monospace';
-      drops.forEach((drop, i) => {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(char, i * 10, drop * 10);
-        drops[i] = drop > height / 10 || Math.random() > 0.95 ? 0 : drop + 1;
-      });
+
+      ctx.font = `${fontSize}px monospace`;
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+
+        ctx.fillStyle = `hsl(120, 100%, ${Math.random() * 40 + 30}%)`;
+        ctx.fillText(text, x, y);
+
+        if (y > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+
+      requestAnimationFrame(draw);
     }
-    setInterval(draw, 50);
+
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     });
+
+    draw();
   }
   createMatrix();
 
@@ -159,13 +164,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', resize);
     resize();
     const particles = [];
+    for (let i = 0; i < 100; i++) {
+      particles.push(new Particle(canvas));
+    }
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach(particle => particle.update());
       requestAnimationFrame(animate);
-    }
-    for (let i = 0; i < 100; i++) {
-      particles.push(new Particle(canvas));
     }
     animate();
   }
@@ -173,11 +178,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Typing Effect with Dynamic Phrases
   const phrases = [
-    "Estudante de Ciência da Computação",
-    "Desenvolvedor Full Stack",
-    "Entusiasta de Tecnologia",
-    "Aspirante a Desenvolvedor Júnior",
-    "Criando soluções digitais"
+    "Desenvolvedor Full Stack com foco em JavaScript",
+    "Explorando o universo do Go e Python",
+    "Transformando linhas de código em soluções",
+    "Back-end com Go, front-end com React",
+    "Estudante de Tecnologia com visão para inovação"
   ];
   const heroText = document.querySelector(".hero-text p");
   const cursor = document.createElement('span');
@@ -194,36 +199,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!deleting) {
       heroText.textContent = currentPhrase.substring(0, charIndex++) + cursor.textContent;
       if (charIndex > currentPhrase.length) {
-        setTimeout(() => deleting = true, 2000); // Pausa após digitar a frase completa
+        setTimeout(() => deleting = true, 2000);
       }
     } else {
       heroText.textContent = currentPhrase.substring(0, charIndex--) + cursor.textContent;
       if (charIndex === 0) {
         deleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length; // Avança para a próxima frase
+        phraseIndex = (phraseIndex + 1) % phrases.length;
       }
     }
-    setTimeout(typeEffect, deleting ? 50 : 100); // Velocidade de digitação/deleção
+    setTimeout(typeEffect, deleting ? 50 : 100);
   }
-
   typeEffect();
 
   // Filtros de Projetos
   document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
       const filter = button.dataset.filter;
-
-      // Atualiza o estado dos botões
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
-
-      // Filtra os cards
       document.querySelectorAll('.project-card').forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
       });
     });
   });
@@ -248,12 +244,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Fecha modal ao clicar fora
   window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
       document.querySelectorAll('.modal').forEach(modal => {
         modal.style.display = 'none';
       });
     }
+  });
+});
+
+// Scroll suave aprimorado
+const smoothScroll = (targetEl, duration) => {
+  const headerElHeight = document.querySelector('.navbar').offsetHeight;
+  const target = document.querySelector(targetEl);
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerElHeight;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  const animation = (currentTime) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const run = ease(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+  };
+
+  const ease = (t, b, c, d) => {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  };
+
+  requestAnimationFrame(animation);
+};
+
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href');
+    smoothScroll(targetId, 1000);
   });
 });

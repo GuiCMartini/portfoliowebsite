@@ -2,20 +2,20 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #333333;
-  --primary-color: #25af5f;
-  --secondary-color: #27ae60;
-  --neutral-color: #f4f4f4;
-  --transition: all 0.3s ease;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --text-color-secondary: rgba(255, 255, 255, 0.7);
-
+  --primary-color: #3a86ff;  /* Substituído por azul mais moderno */
+  --secondary-color: #4361ee; /* Cor complementar */
+  --accent-color: #4cc9f0;    /* Cor de destaque */
+  --neutral-color: #f8f9fa;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-color-secondary: rgba(255, 255, 255, 0.85);
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--accent-color));
 }
 
 [data-theme="dark"] {
-  --bg-color: #1a1a1a;
-  --text-color: #ffffff;
-  --primary-color: #27ae60;
-  --card-bg: rgba(26, 26, 26, 0.9);
+  --bg-color: #121212;  /* Fundo mais escuro para melhor contraste */
+  --text-color: #f8f9fa;
+  --card-bg: rgba(30, 30, 30, 0.95);
+  --neutral-color: #2d2d2d;
 }
 
 
@@ -30,6 +30,7 @@
 }
 
 body {
+  font-family: 'Inter', 'Roboto', sans-serif;  /* Fontes mais modernas */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,6 +43,10 @@ body {
   transition: var(--transition);
   overflow: auto;
   position: relative;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif; /* Manter fonte tech para títulos */
 }
 
 /* Scrollbar */
@@ -281,19 +286,15 @@ section {
 }
 
 .cta-button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.cta-button:hover {
-  background-color: #27ae60;
+.cta-button:hover::after {
+  transform: translateX(0);
 }
+
+
 
 .social-icons {
   display: flex;
@@ -441,8 +442,8 @@ section {
 
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-card::before {
@@ -885,3 +886,48 @@ footer a:hover {
   }
 }
 
+/* Estilo para a seção de currículo redesenhada */
+.resume-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.resume-highlight-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.resume-highlight-item:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-icon {
+  background: var(--primary-color);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.highlight-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.highlight-content p {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}

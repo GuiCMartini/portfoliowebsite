@@ -1,5 +1,7 @@
+
 /* Variáveis Globais */
 :root {
+  
   --bg-color: #ffffff;
   --text-color: #333333;
   --primary-color: #3a86ff;  /* Substituído por azul mais moderno */
@@ -18,23 +20,31 @@
   --neutral-color: #2d2d2d;
 }
 
+main {
+  flex: 1;
+}
+
+html {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 
 
 /* Reset e Estilos Gerais */
 * {
+  transition: all 0.3s ease;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) var(--card-bg);
 }
 
 body {
+  overflow-x: hidden;
+  padding: 0 1rem;
   font-family: 'Inter', 'Roboto', sans-serif;  /* Fontes mais modernas */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -49,6 +59,12 @@ h1, h2, h3 {
   font-family: 'Orbitron', sans-serif; /* Manter fonte tech para títulos */
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
@@ -156,7 +172,30 @@ section {
   justify-content: center;
 }
 
+
+
 /* Seção Hero */
+
+/* Hero responsivo */
+.hero {
+  padding: 4rem 1rem;
+}
+
+
+.hero h1 {
+  font-size: 1.6rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
 .hero-container {
   position: relative;
   z-index: 1; /* Garante que o texto e outros elementos fiquem acima da imagem */
@@ -399,6 +438,7 @@ section {
 /* Filtros */
 .filters {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
@@ -406,19 +446,58 @@ section {
 
 .filter-btn {
   padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  border-radius: 5px;
+  border-radius: 8px;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border: none;
+  transition: background 0.3s ease;
 }
+
+.filter-btn:hover {
+  background: #0c0;
+}
+
 
 .filter-btn.active,
 .filter-btn:hover {
   background-color: var(--primary-color);
   color: white;
 }
+
+
+
+
+.project-card {
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+  will-change: transform;
+
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop grande */
+@media (min-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
 
 /* Grade de Projetos */
 .projects-grid {
@@ -581,10 +660,11 @@ section {
   color: var(--primary-color);
 }
 
-/* Responsividade */
+/* Menu nav some em telas menores se quiser colocar hamburguer depois */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
   }
   .hero-container,
   .about-container {
@@ -601,6 +681,21 @@ section {
   }
   .project-card img {
     height: 150px;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1024px) {
+  .hero {
+    padding: 6rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.4rem;
   }
 }
 
@@ -685,6 +780,97 @@ textarea:focus,
   100% { clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); }
 }
 
+
+/* ===== Efeito Glitch no Título ===== */
+.glitch {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-color);  /* Usa a cor definida nas variáveis */
+  overflow: hidden;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--primary-color);
+  clip: rect(24px, 9999px, 90px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--accent-color);
+  clip: rect(85px, 9999px, 140px, 0);
+  animation: glitch-anim2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.3deg);
+  }
+  20% {
+    clip: rect(10px, 9999px, 85px, 0);
+    transform: skew(0.7deg);
+  }
+  40% {
+    clip: rect(0px, 9999px, 50px, 0);
+    transform: skew(0.3deg);
+  }
+  60% {
+    clip: rect(70px, 9999px, 80px, 0);
+    transform: skew(0.5deg);
+  }
+  80% {
+    clip: rect(30px, 9999px, 90px, 0);
+    transform: skew(0.3deg);
+  }
+  100% {
+    clip: rect(45px, 9999px, 50px, 0);
+    transform: skew(0.7deg);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(12px, 9999px, 18px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(60px, 9999px, 80px, 0);
+    transform: skew(0.3deg);
+  }
+  40% {
+    clip: rect(20px, 9999px, 25px, 0);
+    transform: skew(0.7deg);
+  }
+  60% {
+    clip: rect(50px, 9999px, 70px, 0);
+    transform: skew(0.4deg);
+  }
+  80% {
+    clip: rect(30px, 9999px, 40px, 0);
+    transform: skew(0.6deg);
+  }
+  100% {
+    clip: rect(10px, 9999px, 20px, 0);
+    transform: skew(0.5deg);
+  }
+}
+
+
 /* Glitch Effect on Title */
 .navbar h1 {
   position: relative;
@@ -714,15 +900,44 @@ textarea:focus,
 
 /* Footer */
 footer {
-  background-color: var(--card-bg);
-  color: var(--text-color);
+  background: #0d0d0d;
+  color: #fff;
   text-align: center;
   padding: 2rem 1rem;
-  margin-top: auto;
-  border-top: 2px solid var(--primary-color);
   font-size: 0.9rem;
+  line-height: 1.6;
+  border-top: 1px solid #222;
 }
 
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+footer .social-icons a {
+  color: #0f0;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Responsivo (mobile-first, mas reforçando em telas menores) */
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  footer .social-icons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
 
 footer a {
   color: var(--primary-color);
@@ -930,4 +1145,127 @@ footer a:hover {
 .highlight-content p {
   margin-bottom: 0.3rem;
   font-size: 0.95rem;
+}
+
+/* Estilização da seção de contato */
+.contato-section {
+  padding: 80px 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.contato-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.contato-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-box i {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.info-box h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.info-box a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.info-box a:hover {
+  color: var(--primary-color);
+}
+
+.contato-form {
+  flex: 1;
+  min-width: 320px;
+}
+
+.contato-form h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.cta-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .contato-content {
+    flex-direction: column;
+  }
+}
+
+.info-box, .form-group, .cta-button {
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateX(5px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
 }

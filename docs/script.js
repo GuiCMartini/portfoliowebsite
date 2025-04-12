@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const formData = new FormData(contactForm);
       try {
-        const response = await fetch('https://formspree.io/f/your-form-id', {
+        const response = await fetch('https://formspree.io/f/mldjangr', {
           method: 'POST',
           body: formData,
           headers: {
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const chars = 'アァイィウエエカキクケコサシスセソタチツテトナニヌネノ01'.split('');
 
     function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; // em vez de 0.1
       ctx.fillRect(0, 0, width, height);
 
       ctx.font = `${fontSize}px monospace`;
@@ -288,3 +288,31 @@ navLinks.forEach(link => {
     smoothScroll(targetId, 1000);
   });
 });
+
+AOS.init({
+  duration: 1000,
+  once: true,
+});
+
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    alert("Mensagem enviada com sucesso!");
+    form.reset();
+  } else {
+    alert("Erro ao enviar. Tente novamente.");
+  }
+});
+

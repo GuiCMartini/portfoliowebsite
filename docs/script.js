@@ -254,23 +254,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Scroll suave aprimorado
-const smoothScroll = (targetEl, duration) => {
-  const headerElHeight = document.querySelector('.navbar').offsetHeight;
+const smoothScroll = (targetEl, duration = 1000) => {
+  const headerHeight = navbar.offsetHeight;
   const target = document.querySelector(targetEl);
-  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerElHeight;
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
   let startTime = null;
 
+
   const animation = (currentTime) => {
-    if (startTime === null) startTime = currentTime;
+    if (!startTime) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
-    const run = ease(timeElapsed, startPosition, distance, duration);
+    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
     window.scrollTo(0, run);
     if (timeElapsed < duration) requestAnimationFrame(animation);
   };
 
-  const ease = (t, b, c, d) => {
+  const easeInOutQuad = (t, b, c, d) => {
     t /= d / 2;
     if (t < 1) return c / 2 * t * t + b;
     t--;
@@ -316,3 +317,32 @@ document.getElementById("contactForm").addEventListener("submit", async function
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopButton = document.getElementById("backToTop");
+
+  // Mostrar o botão ao rolar para baixo
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  // Voltar ao topo ao clicar no botão
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+
+  // Função para debounce
+  const debounce = (func, delay = 100) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
